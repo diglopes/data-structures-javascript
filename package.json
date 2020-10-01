@@ -1,0 +1,14 @@
+{
+  "name": "data-structures-javascript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:diglopes/data-structures-javascript.git",
+  "author": "Diego Lopes <diego-chez@hotmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^26.4.2"
+  }
+}
