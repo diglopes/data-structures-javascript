@@ -14,4 +14,15 @@ describe('Queue', () => {
        q.dequeue()
        expect(q.peekFront).toBe(2)
    })
+
+   it('should return true when queue is empty', () => {
+       const q = new Queue()
+       expect(q.isEmpty).toBe(true)
+   })
+
+   it('should return false when queue is not empty', () => {
+    const q = new Queue()
+    q.enqueue(10)
+    expect(q.isEmpty).toBe(false)
+})
 });
