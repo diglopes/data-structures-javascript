@@ -21,8 +21,8 @@ describe('Queue', () => {
    })
 
    it('should return false when queue is not empty', () => {
-    const q = new Queue()
-    q.enqueue(10)
-    expect(q.isEmpty).toBe(false)
-})
+        const q = new Queue()
+        q.enqueue(10)
+        expect(q.isEmpty).toBe(false)
+   })
 });
