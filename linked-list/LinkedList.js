@@ -63,6 +63,16 @@ class LinkedList {
             current = current.next
         }
     }
+
+    find(callback) {
+        let current = this.head
+        let found = false
+        while(current && !found) {
+            found = callback(current.data)
+            if(!found) current = current.next
+        }
+        return current
+    }
 }
 
 module.exports = LinkedList

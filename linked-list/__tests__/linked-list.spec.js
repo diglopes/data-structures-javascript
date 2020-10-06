@@ -62,4 +62,13 @@ describe('Linked list', () => {
         linkedList.append("item_2")
         linkedList.append("item_3")
     })
+
+    it("should return the data given a callback", () => {
+        const linkedList = new LinkedList()
+        linkedList.append({ key: "a",  value: 1 })
+        linkedList.append({ key: "b",  value: 2 })
+        linkedList.append({ key: "c",  value: 3 })
+        const cb = nodeValue => nodeValue.key === "b"
+        expect(linkedList.find(cb).data).toEqual({ key: "b",  value: 2 })
+    })
 });
