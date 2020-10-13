@@ -1,4 +1,4 @@
-const LinkedList = require("../linked-list/LinkedList")
+const { LinkedList } = require("../linked-list/LinkedList")
 
 class HashMap {
     constructor(bucketsAmount = 10) {

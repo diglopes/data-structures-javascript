@@ -1,4 +1,4 @@
-const LinkedList = require('../linked-list/LinkedList')
+const { LinkedList } = require('../linked-list/LinkedList')
 
 class Queue {
     constructor() {
@@ -10,7 +10,7 @@ class Queue {
      * @return {*}
      */
     get peekBack() {
-        return this.list.tail.data
+        return this.list.tail
     }
 
     /**
@@ -18,7 +18,7 @@ class Queue {
      * @return {*}
      */
     get peekFront() {
-        return this.list.head.data
+        return this.list.head
     }
 
     /**

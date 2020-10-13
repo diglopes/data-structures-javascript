@@ -1,4 +1,4 @@
-const LinkedList = require('../linked-list/LinkedList')
+const { LinkedList } = require('../linked-list/LinkedList')
 
 class Stack {
     constructor() {
@@ -10,7 +10,7 @@ class Stack {
      * @return {*}
      */
     get peek() {
-        return this.list.head.data
+        return this.list.head
     }
 
     /**
