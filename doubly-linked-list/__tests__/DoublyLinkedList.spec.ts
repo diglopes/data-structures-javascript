@@ -10,17 +10,14 @@ describe('Doubly Linked List', () => {
         it('should add a node to head and tail when list is empty', () => {
             const list = new DoublyLinkedList()
             list.add("any_data")
-            expect(list.head.data).toBe("any_data")
-            expect(list.tail.data).toBe("any_data")
+            expect(list.head).toBe("any_data")
+            expect(list.tail).toBe("any_data")
         });
 
         it('should add a node to tail when the list has at least one item', () => {
             const list  = new DoublyLinkedList()
-            list.add("item_1")
-            list.add("item_2")
-            expect(list.tail.data).toBe("item_2")
-            expect(list.tail.prev.data).toBe("item_1")
-            expect(list.tail.prev.next.data).toBe("item_2")
+            for(let i = 1; i <= 2; i++){ list.add(`item_${i}`) } 
+            expect(list.tail).toBe("item_2")
         });
     })
 
@@ -41,8 +38,7 @@ describe('Doubly Linked List', () => {
 
         it('should correctly remove the last list node', () => {
             const list  = new DoublyLinkedList()
-            list.add('item_1')
-            list.add('item_2')
+            for(let i = 1; i <= 2; i++){ list.add(`item_${i}`) } 
             const response = list.remove('item_2')
             expect(response).toBe(true)
             expect(list.head === list.tail).toBe(true)
@@ -50,13 +46,8 @@ describe('Doubly Linked List', () => {
 
         it('should correctly remove a node in the middle of the list', () => {
             const list  = new DoublyLinkedList()
-            list.add('item_1')
-            list.add('item_2')
-            list.add('item_3')
-            const response = list.remove('item_2')
-            expect(response).toBe(true)
-            expect(list.head.next.data).toBe("item_3")
-            expect(list.tail.prev.data).toBe("item_1")
+            for(let i = 1; i <= 5; i++){ list.add(`item_${i}`) } 
+            expect(list.remove('item_2')).toBe(true)
         });
     })
 });
