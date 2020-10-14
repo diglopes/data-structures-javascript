@@ -1,26 +1,15 @@
+import { List } from "../utils"
+
 export class LinkedListNode<T> implements Global.INode<T> {
+    public data: T | null = null
     public next = null
-    public data = null
     
-    constructor(data: any) {
+    constructor(data: T) {
         this.data = data  
     }
 }
 
-export class LinkedList<T> {
-    private _head: Global.INode<T> | null = null
-    private _tail: Global.INode<T> | null = null
-
-    constructor() {}
-
-    get head() {
-        return this._head?.data || null
-    }
-
-    get tail() {
-        return this._tail?.data || null
-    }
-
+export class LinkedList<T> extends List<T> {
     public append(data: T): boolean {
         if(!this._head || !this._tail) {
             const node: Global.INode<T> = new LinkedListNode(data)
