@@ -1,16 +1,16 @@
-const Stack = require("../Stack")
+import { Stack } from "../Stack"
 
 describe('Stack', () => {
     it('should add elements to the top of the stack', () => {
-        const s = new Stack()
+        const s = new Stack<number>()
         for(let i = 1; i <= 3; i++){ s.push(i) }       
         expect(s.peek).toBe(3)
     });
 
     it('should remove the first element from the top of the stack', () => {
-        const s = new Stack()
+        const s = new Stack<number>()
         for(let i = 1; i <= 3; i++){ s.push(i) }  
-        s.pop()     
+        expect(s.pop()).toBe(true)    
         expect(s.peek).toBe(2)
     })
 
@@ -20,8 +20,8 @@ describe('Stack', () => {
     })
  
     it('should return false when queue is not empty', () => {
-         const q = new Stack()
-         q.push(10)
-         expect(q.isEmpty).toBe(false)
+        const q = new Stack<number>()
+        q.push(10)
+        expect(q.isEmpty).toBe(false)
     })
 });

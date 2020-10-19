@@ -1,15 +1,17 @@
-const { LinkedList } = require('../linked-list/LinkedList')
+import { LinkedList } from '../linked-list/LinkedList'
 
-class Stack {
+export class Stack<T> {
+    private list: LinkedList<T>
+
     constructor() {
-        this.list = new LinkedList()
+        this.list = new LinkedList<T>()
     }
 
     /**
      * Return the data from the top element of the stack
      * @return {*}
      */
-    get peek() {
+    get peek(): T | null {
         return this.list.head
     }
 
@@ -17,24 +19,24 @@ class Stack {
      * Return if the stack has at least one item
      * @return {boolean}
      */
-    get isEmpty() {
+    get isEmpty(): boolean {
         return !this.list.head
     }
 
     /**
      * Add an element to the top of the stack
-     * @param {*} data 
+     * @param {*} data this.list.remove(this.peek)
+    }
+}
      */
-    push(data) {
-        this.list.prepend(data)
+    push(data: T): boolean {
+        return this.list.prepend(data)
     }
 
     /**
      * Remove the first element from the top of the stack
      */
-    pop() {
-        this.list.remove(this.peek)
+    pop(): boolean {
+        return this.list.remove(this.peek as T)
     }
 }
-
-module.exports = Stack
